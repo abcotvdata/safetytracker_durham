@@ -54,9 +54,14 @@ districts_geo <- st_make_valid(districts_geo)
 
 # beats_geo <- beats_geo %>% select(7,6,11)
 districts_geo <- districts_geo %>% rename("district"="LAWDIST")
+districts_geo <- districts_geo %>% filter(district!="DSO")
 
-
-
+# Quick define of the areas 
+districts_geo$placename <- case_when(districts_geo$district == "D1"~ "eastern Durham",
+                                     districts_geo$district == "D2"~ "northern Durham",
+                                     districts_geo$district == "D3"~ "western and southwestern Durham",
+                                     districts_geo$district == "D4"~ "southern Durham",
+                                     districts_geo$district == "D5"~ "central Durham and downtown")
 
 # saving a clean geojson and separate RDS for use in tracker
 file.remove("data/output/geo/durham_districts.geojson")
@@ -66,14 +71,14 @@ saveRDS(districts_geo,"scripts/rds/durham_districts.rds")
 # BEAT MAP JUST FOR TESTING PURPOSES
 # CAN COMMENT OUT ONCE FINALIZED
 # Set bins for districts pop map
-popbins <- c(0,2500,5000,7500,10000,50000, Inf)
+popbins <- c(0,50000,65000,7000,75000,80000, Inf)
 poppal <- colorBin("YlOrRd", districts_geo$population, bins = popbins)
-poplabel <- paste(sep = "<br>", districts_geo$district,prettyNum(districts_geo$population, big.mark = ","))
+poplabel <- paste(sep = "<br>", districts_geo$district,districts_geo$placename,prettyNum(districts_geo$population, big.mark = ","))
 
 durham_districts_map <- leaflet(districts_geo) %>%
   setView(-78.89, 35.99, zoom = 11.5) %>% 
   addProviderTiles(provider = "Esri.WorldImagery") %>%
-  addProviderTiles(provider = "Stamen.TonerLabels") %>%
+  addProviderTiles(provider = "CartoDB.PositronOnlyLabels") %>%
   addPolygons(color = "white", popup = poplabel, weight = 2, smoothFactor = 0.5,
               opacity = 0.5, fillOpacity = 0.3,
               fillColor = ~poppal(`population`))
