@@ -18,7 +18,7 @@ library(sf)
 ```
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
-![<popupchatter>Updated `r format(Sys.time(), '%B %d, %Y')` by the ABC11 Data Team</popupchatter>](https://github.com/abcotvdata/safetytracker_durham/raw/main/docs/banner_6abc.jpg)
+![<popupchatter>Updated `r format(Sys.time(), '%B %d, %Y')` by the ABC11 Data Team</popupchatter>](https://github.com/abcotvdata/safetytracker_durham/raw/main/docs/banner_placeholder.png)
 
 ```{css, echo=FALSE}
 
@@ -195,8 +195,8 @@ th {
 <option value="https://abcotvdata.github.io/safetytracker_durham/Durham_Safety_Tracker_Thefts.html">Thefts</option>
 </select></h2>
 <h2>Choose a different city to explore: <select onchange="window.location=this.value">
-<option value="https://abcotvdata.github.io/safetytracker_raleigh/Raleigh_Safety_Tracker.html">Raleigh</option>
 <option value="https://abcotvdata.github.io/safetytracker_durham/Durham_Safety_Tracker.html">Durham</option>
+<option value="https://abcotvdata.github.io/safetytracker_raleigh/Raleigh_Safety_Tracker.html">Raleigh</option>
 <option value="https://abcotvdata.github.io/safetytracker_raleigh/Raleigh_Safety_Tracker.html">More coming soon!</option>
 </select></h2>
 
