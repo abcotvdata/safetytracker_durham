@@ -153,3 +153,10 @@ recent_crime_durham[is.na(recent_crime_durham)] <- 0
 # export this file as RDS store for use in tracker building
 saveRDS(recent_crime_durham,"scripts/rds/recent_crime_durham.RDS")
 
+# OPEN WORK
+# Get latest date in our file and save for
+# automating the updated date text in building tracker
+asofdate <- str_replace(asofdate,"Actual Offenses - Period Ending ","")
+asofdate <- mdy(asofdate)
+saveRDS(asofdate,"scripts/rds/asofdate.rds")
+
