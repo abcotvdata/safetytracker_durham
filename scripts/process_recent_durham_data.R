@@ -159,4 +159,3 @@ saveRDS(recent_crime_durham,"scripts/rds/recent_crime_durham.RDS")
 asofdate <- str_replace(asofdate,"Actual Offenses - Period Ending ","")
 asofdate <- mdy(asofdate)
 saveRDS(asofdate,"scripts/rds/asofdate.rds")
-
