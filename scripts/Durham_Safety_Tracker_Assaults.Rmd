@@ -18,7 +18,7 @@ library(sf)
 ```
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
-![<popupchatter>Updated `r format(Sys.time(), '%B %d, %Y')` by the ABC11 Data Team</popupchatter>](https://github.com/abcotvdata/safetytracker_durham/raw/main/docs/banner_placeholder.png)
+![<popupchatter>Updated `r format(Sys.time(), '%B %d, %Y')` by the ABC11 Data Team</popupchatter>](https://github.com/abcotvdata/safetytracker_durham/raw/main/docs/wtvd_banner2.png)
 ```{css, echo=FALSE}
 
 h1.title {
@@ -185,7 +185,6 @@ th {
 
 <h2>ABC11 is tracking crime and safety across Durham and in your neighborhood. 
 <br>You can choose which crime to examine: <select onchange="window.location=this.value">
-<option value="https://abcotvdata.github.io/safetytracker_durham/Durham_Safety_Tracker_Assaults.html">Assaults</option>
 <option value="https://abcotvdata.github.io/safetytracker_durham/Durham_Safety_Tracker_Assaults.html">Assaults</option>
 <option value="https://abcotvdata.github.io/safetytracker_durham/Durham_Safety_Tracker_AutoThefts.html">Vehicle Thefts</option>
 <option value="https://abcotvdata.github.io/safetytracker_durham/Durham_Safety_Tracker_Burglaries.html">Burglaries</option>
