@@ -1,8 +1,8 @@
 district,population,placename,category,total19,total20,total21,ytd22,last12mos,type,geometry,total_prior3years,avg_prior3years,inc_19to21,inc_19tolast12,inc_21tolast12,inc_prior3yearavgtolast12,rate19,rate20,rate21,rate_last12,rate_prior3years
-Citywide,285527,NA,Murder,38,38,50,46,47,Violent,list(),126,42,31.6,23.7,-6,12,13.3,13.3,17.5,16.5,14.7
-Citywide,285527,NA,Sexual Assault,107,119,122,143,146,Violent,list(),348,116,14,36.4,19.7,26,37.5,41.7,42.7,51.1,40.6
-Citywide,285527,NA,Robbery,611,612,531,575,575,Violent,list(),1754,584.7,-13.1,-5.9,8.3,-2,214,214.3,186,201.4,204.8
-Citywide,285527,NA,Aggravated Assault,1251,1643,1436,1156,1163,Violent,list(),4330,1443.3,14.8,-7,-19,-19,438.1,575.4,502.9,407.3,505.5
-Citywide,285527,NA,Burglary,1851,1817,1444,1265,1267,Property,list(),5112,1704,-22,-31.6,-12.3,-26,648.3,636.4,505.7,443.7,596.8
-Citywide,285527,NA,Theft,7838,7683,7357,7059,7062,Property,list(),22878,7626,-6.1,-9.9,-4,-7,2745.1,2690.8,2576.6,2473.3,2670.9
-Citywide,285527,NA,Vehicle Theft,677,878,686,819,818,Property,list(),2241,747,1.3,20.8,19.2,10,237.1,307.5,240.3,286.5,261.6
+Citywide,285527,NA,Murder,38,50,46,1,45,Violent,list(),134,44.7,21.1,18.4,-2.2,1,13.3,17.5,16.1,15.8,15.7
+Citywide,285527,NA,Sexual Assault,107,122,143,9,147,Violent,list(),372,124,33.6,37.4,2.8,19,37.5,42.7,50.1,51.5,43.4
+Citywide,285527,NA,Robbery,611,531,575,34,565,Violent,list(),1717,572.3,-5.9,-7.5,-1.7,-1,214,186,201.4,197.9,200.4
+Citywide,285527,NA,Aggravated Assault,1251,1436,1156,91,1172,Violent,list(),3843,1281,-7.6,-6.3,1.4,-9,438.1,502.9,404.9,410.5,448.6
+Citywide,285527,NA,Burglary,1851,1444,1265,99,1307,Property,list(),4560,1520,-31.7,-29.4,3.3,-14,648.3,505.7,443,457.8,532.3
+Citywide,285527,NA,Theft,7838,7357,7059,386,7075,Property,list(),22254,7418,-9.9,-9.7,0.2,-5,2745.1,2576.6,2472.3,2477.9,2598
+Citywide,285527,NA,Vehicle Theft,677,686,819,58,843,Property,list(),2182,727.3,21,24.5,2.9,16,237.1,240.3,286.8,295.2,254.7
