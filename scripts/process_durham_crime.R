@@ -61,9 +61,9 @@ district_crime$rate_prior3years <-
 # district_crime <- district_crime %>% select(1,4,5,6,26:28,36:40,44:55,29,42)
 # for map/table making purposes, changing Inf and NaN in calc fields to NA
 district_crime <- district_crime %>%
-  mutate(across(where(is.numeric), ~na_if(., Inf)))
+  mutate_if(is.numeric, ~ifelse(. == Inf, NA, .))
 district_crime <- district_crime %>%
-  mutate(across(where(is.numeric), ~na_if(., "NaN")))
+  mutate_if(is.numeric, ~ifelse(. == "NaN", NA, .))
 
 # Divide into citywide_crime and district_crime files
 citywide_crime <- district_crime %>% filter(district=="Citywide")
