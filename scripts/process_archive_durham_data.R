@@ -79,7 +79,7 @@ names(past_crime_durham) <- c("rawtext")
 # remove the long white space on each end of each line
 past_crime_durham$rawtext2 <- strsplit(past_crime_durham$rawtext, "\\s+\\s+")
 # flatten the list this creates in processed column
-past_crime_durham <- past_crime_durham %>% unnest_wider(rawtext2)
+past_crime_durham <- past_crime_durham %>% unnest_wider(rawtext2, names_sep = "_")
 
 # get as of date out of this table now
 past_year_filedate <- past_crime_durham[49,1]
