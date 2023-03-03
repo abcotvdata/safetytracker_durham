@@ -80,7 +80,7 @@ names(recent_crime_durham) <- c("rawtext")
 # remove the long white space on each end of each line
 recent_crime_durham$rawtext2 <- strsplit(recent_crime_durham$rawtext, "\\s+\\s+")
 # flatten the list this creates in processed column
-recent_crime_durham <- recent_crime_durham %>% unnest_wider(rawtext2)
+recent_crime_durham <- recent_crime_durham %>% unnest_wider(rawtext2, names_sep = "_")
 
 # get as of date out of this table now
 asofdate <- recent_crime_durham[49,1]

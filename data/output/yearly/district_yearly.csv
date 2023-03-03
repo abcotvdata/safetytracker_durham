@@ -1,36 +1,36 @@
 district,category,total19,total20,total21,last12mos
-D1,Murder,6,15,15,17
-D1,Sexual Assault,29,35,36,35
-D1,Robbery,136,107,116,103
-D1,Aggravated Assault,371,426,280,264
-D1,Burglary,458,261,270,281
-D1,Theft,1390,1148,1222,1198
-D1,Vehicle Theft,104,120,129,118
+D1,Murder,6,15,15,18
+D1,Sexual Assault,29,35,36,34
+D1,Robbery,136,107,116,100
+D1,Aggravated Assault,371,426,280,266
+D1,Burglary,458,261,270,287
+D1,Theft,1390,1148,1222,1191
+D1,Vehicle Theft,104,120,129,123
 D2,Murder,6,6,6,9
-D2,Sexual Assault,22,34,34,34
-D2,Robbery,166,151,179,167
-D2,Aggravated Assault,322,287,255,290
-D2,Burglary,463,435,349,359
-D2,Theft,1981,2196,1857,1859
+D2,Sexual Assault,22,34,34,36
+D2,Robbery,166,151,179,165
+D2,Aggravated Assault,322,287,255,285
+D2,Burglary,463,435,349,362
+D2,Theft,1981,2196,1857,1854
 D2,Vehicle Theft,199,205,192,185
 D3,Murder,11,7,6,7
 D3,Sexual Assault,21,19,24,23
-D3,Robbery,122,109,98,82
+D3,Robbery,122,109,98,81
 D3,Aggravated Assault,160,221,176,170
-D3,Burglary,346,300,238,256
-D3,Theft,2115,1756,1766,1791
-D3,Vehicle Theft,115,150,208,222
-D4,Murder,12,18,16,15
-D4,Sexual Assault,28,27,37,40
+D3,Burglary,346,300,238,257
+D3,Theft,2115,1756,1766,1818
+D3,Vehicle Theft,115,150,208,225
+D4,Murder,12,18,16,13
+D4,Sexual Assault,28,27,37,43
 D4,Robbery,145,137,144,135
 D4,Aggravated Assault,331,432,380,367
-D4,Burglary,512,370,347,348
-D4,Theft,1777,1713,1737,1796
-D4,Vehicle Theft,212,162,220,260
-D5,Murder,3,4,2,2
+D4,Burglary,512,370,347,344
+D4,Theft,1777,1713,1737,1784
+D4,Vehicle Theft,212,162,220,259
+D5,Murder,3,4,2,1
 D5,Sexual Assault,6,7,4,5
-D5,Robbery,42,27,36,38
-D5,Aggravated Assault,66,71,80,84
-D5,Burglary,72,78,59,55
-D5,Theft,572,543,467,457
+D5,Robbery,42,27,36,40
+D5,Aggravated Assault,66,71,80,87
+D5,Burglary,72,78,59,54
+D5,Theft,572,543,467,456
 D5,Vehicle Theft,47,49,54,59
