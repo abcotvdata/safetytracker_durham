@@ -13,10 +13,10 @@ recent_crime_durham <- readRDS("scripts/rds/recent_crime_durham.RDS")
 ## combine two processed files
 durham_crime <- left_join(past_crime_durham,recent_crime_durham,by=c("district"="district","category"="category","type"="type"))
 # add last 12 months figure
-durham_crime$last12mos <- (durham_crime$total21-durham_crime$ytd21)+durham_crime$ytd22
+durham_crime$last12mos <- (durham_crime$total22-durham_crime$ytd22)+durham_crime$ytd23
 # narrow to just the columns we need in the proper order
 durham_crime <- durham_crime %>% 
-  select(3,1,2,5,6,8,9,4)
+  select(4,1,2,3,6,7,8,9,10,5)
 
 ### CITYWIDE CRIME 
 ### TOTALS AND OUTPUT
@@ -38,21 +38,21 @@ district_crime <- full_join(districts_geo, durham_crime, by="district") %>% filt
 district_crime$population <- ifelse(district_crime$district=="Citywide", durham_population,district_crime$population)
 
 # add 3-year totals and annualized averages
-district_crime$total_prior3years <- district_crime$total19+
-  district_crime$total20+
-  district_crime$total21
-district_crime$avg_prior3years <- round(((district_crime$total19+
-                                            district_crime$total20+
-                                            district_crime$total21)/3),1)
+district_crime$total_prior3years <- district_crime$total20+
+  district_crime$total21+
+  district_crime$total22
+district_crime$avg_prior3years <- round((district_crime$total_prior3years/3),1)
+
 # now add the increases or change percentages
-district_crime$inc_19to21 <- round(district_crime$total21/district_crime$total19*100-100,1)
+district_crime$inc_19to22 <- round(district_crime$total22/district_crime$total19*100-100,1)
 district_crime$inc_19tolast12 <- round(district_crime$last12mos/district_crime$total19*100-100,1)
-district_crime$inc_21tolast12 <- round(district_crime$last12mos/district_crime$total21*100-100,1)
+district_crime$inc_22tolast12 <- round(district_crime$last12mos/district_crime$total21*100-100,1)
 district_crime$inc_prior3yearavgtolast12 <- round((district_crime$last12mos/district_crime$avg_prior3years)*100-100,0)
 # add crime rates for each year
 district_crime$rate19 <- round((district_crime$total19/district_crime$population)*100000,1)
 district_crime$rate20 <- round((district_crime$total20/district_crime$population)*100000,1)
 district_crime$rate21 <- round((district_crime$total21/district_crime$population)*100000,1)
+district_crime$rate22 <- round((district_crime$total22/district_crime$population)*100000,1)
 district_crime$rate_last12 <- round((district_crime$last12mos/district_crime$population)*100000,1)
 district_crime$rate_prior3years <- 
   round((district_crime$avg_prior3years/district_crime$population)*100000,1)
@@ -70,11 +70,11 @@ citywide_crime <- district_crime %>% filter(district=="Citywide")
 district_crime <- district_crime %>% filter(district!="Citywide")
 
 # create a quick long-term annual table
-district_yearly <- district_crime %>% select(1,4:7,9) %>% st_drop_geometry()
+district_yearly <- district_crime %>% select(1,4:8,11) %>% st_drop_geometry()
 write_csv(district_yearly,"data/output/yearly/district_yearly.csv")
 
 # create a quick long-term annual table
-citywide_yearly <- citywide_crime %>% select(1,4:7,9) %>% st_drop_geometry()
+citywide_yearly <- citywide_crime %>% select(1,4:8,11) %>% st_drop_geometry()
 citywide_yearly$total10 <- c(24,70,666,874,3691,7043,738)
 citywide_yearly$total11 <- c(26,66,702,922,3886,6766,619)
 citywide_yearly$total12 <- c(21,73,622,1006,3298,6302,690)
@@ -84,7 +84,7 @@ citywide_yearly$total15 <- c(37,101,736,1336,3187,6810,592)
 citywide_yearly$total16 <- c(42,103,862,1250,2576,6757,680)
 citywide_yearly$total17 <- c(21,132,855,1256,2337,7197,746)
 citywide_yearly$total18 <- c(32,138,718,1073,2226,6671,801)
-citywide_yearly <- citywide_yearly %>% select(1,2,7:15,3:6) 
+citywide_yearly <- citywide_yearly %>% select(1,2,8:16,3:7) 
 write_csv(district_yearly,"data/output/yearly/citywide_yearly.csv")
 
 # add additional years from state archive of reported ucr crimes back to 2000

@@ -133,12 +133,15 @@ past_crime_durham$category <- case_when(past_crime_durham$category == "1. Crimin
                                         TRUE ~ "Other")
 
 # Drop extra columns of unneeded data
-past_crime_durham <- past_crime_durham %>% select(2,5,14,15)
+past_crime_durham <- past_crime_durham %>% select(2,5,6,14,15)
 
 # clean to convert to numeric; remove any NAs
 past_crime_durham$total19 <- gsub(",","",past_crime_durham$total19)
 past_crime_durham$total19 <- as.numeric(past_crime_durham$total19)
+past_crime_durham$total20 <- gsub(",","",past_crime_durham$total20)
+past_crime_durham$total20 <- as.numeric(past_crime_durham$total20)
 past_crime_durham[is.na(past_crime_durham)] <- 0
+
 
 # export this file as RDS store for use in tracker building
 saveRDS(past_crime_durham,"scripts/rds/past_crime_durham.RDS")

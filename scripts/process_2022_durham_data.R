@@ -8,7 +8,8 @@ library(lubridate)
 ### PROCESS THE NEWEST WEEKLY FILE FROM DURHAM PD #####
 # source is https://www.durhamnc.gov/Archive.aspx?AMID=150
 # Load the file we want for 2022 (This Week)
-pdftext <- pdf_text("data/source/recent/period_to_date.pdf") %>% strsplit(split = "\n")
+pdftext <- pdf_text("data/source/recent/Period to Date.pdf") %>% strsplit(split = "\n")
+# pdftext <- pdf_text("data/source/recent/December 31 2022 Weekly Period to Date Table.pdf") %>% strsplit(split = "\n")
 
 # Grab individual text values for each of 5 districts plus citywide
 # Dist 1
