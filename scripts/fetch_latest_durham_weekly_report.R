@@ -17,7 +17,7 @@ value <- str_extract(filtered_links[[2]], "=.*")
 value <- sub("=", "", value)
 # download the file to the source data directory for scraping
 download.file(paste0("https://www.durhamnc.gov/ArchiveCenter/ViewFile/Item/",value),
-              "data/source/period_to_date.pdf")
+              "data/source/recent/period_to_date.pdf")
 
 
 
