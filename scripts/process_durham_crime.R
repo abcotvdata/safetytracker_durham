@@ -33,6 +33,7 @@ durham_population <- 285527
 #saveRDS(asofdate,"scripts/rds/asofdate.rds")
 
 # Merge the precincts file with geography and populations
+districts_geo <- readRDS("scripts/rds/durham_districts.rds")
 district_crime <- full_join(districts_geo, durham_crime, by="district") %>% filter(district!="DSO")
 # add zeros where there were no crimes tallied that year
 district_crime$population <- ifelse(district_crime$district=="Citywide", durham_population,district_crime$population)
