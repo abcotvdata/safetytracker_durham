@@ -23,7 +23,7 @@ jobs:
         run: |
           brew install gdal
       - name: Install dependencies and packages
-        run: Rscript -e 'install.packages(c("sf","zoo","pdftools","rvest","stringr",janitor","tidyverse","readxl","leaflet","leaflet.extras","leaflet.providers","htmlwidgets","htmltools","lubridate"))'
+        run: Rscript -e 'install.packages(c("sf","zoo","pdftools","rvest","stringr","janitor","tidyverse","readxl","leaflet","leaflet.extras","leaflet.providers","htmlwidgets","htmltools","lubridate"))'
       - name: Get latest weekly crime data
         run: Rscript scripts/fetch_latest_durham_weekly_report.R
       - name: Process latest weekly data
