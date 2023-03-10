@@ -25,12 +25,8 @@ durham_crime <- durham_crime %>%
 # likely needs added to the tracker itself
 durham_population <- 285527
 
-# OPEN WORK
-# Get latest date in our file and save for
-# automating the updated date text in building tracker
-#asofdate <- str_replace(asofdate,"Actual Offenses - Period Ending ","")
-#asofdate <- mdy(asofdate)
-#saveRDS(asofdate,"scripts/rds/asofdate.rds")
+# load the latest date
+asofdate <- readRDS("scripts/rds/asofdate.rds")
 
 # Merge the precincts file with geography and populations
 districts_geo <- readRDS("scripts/rds/durham_districts.rds")
